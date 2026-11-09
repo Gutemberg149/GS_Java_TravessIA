@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: travessia-eureka
+    runtime: docker
+    dockerfilePath: ./eureka-server/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: PORT
+        value: 8761
+
+  - type: web
+    name: travessia-traffic
+    runtime: docker
+    dockerfilePath: ./traffic-service/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: PORT
+        value: 8081
+      - key: ORACLE_URL
+        value: jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
+      - key: ORACLE_USER
+        value: rm562267
+      - key: ORACLE_PASSWORD
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: WEATHER_API_KEY
+        sync: false
+      - key: EUREKA_URI
+        sync: false
+
+  - type: web
+    name: travessia-gateway
+    runtime: docker
+    dockerfilePath: ./gateway-service/Dockerfile
+    dockerContext: .
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: JWT_SECRET
+        value: TravessIASecretKeyForHS256AlgorithmMinimum256BitsRequired2026Fiap
+      - key: JWT_EXPIRATION_MS
+        value: 31536000000
+      - key: TRAFFIC_SERVICE_URL
+        sync: false
+      - key: EUREKA_URI
+        sync: false

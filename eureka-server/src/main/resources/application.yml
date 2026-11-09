@@ -1,0 +1,8 @@
+server:
+  port: ${PORT:${SERVER_PORT:8761}}
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    hostname: ${RENDER_EXTERNAL_HOSTNAME:localhost}

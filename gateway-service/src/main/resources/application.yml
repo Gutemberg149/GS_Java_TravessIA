@@ -1,0 +1,20 @@
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    discovery:
+      enabled: true
+      client:
+        service-url:
+          defaultZone: ${EUREKA_URI:${SPRING_CLOUD_DISCOVERY_CLIENT_SERVICE-URL_DEFAULTZONE:http://eureka:8761/eureka/}}
+traffic-service:
+  url: ${TRAFFIC_SERVICE_URL:http://traffic:8081}
+jwt:
+  secret: ${JWT_SECRET:TravessIASecretKeyForHS256AlgorithmMinimum256BitsRequired2026Fiap}
+  expirationMs: ${JWT_EXPIRATION_MS:31536000000}
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html

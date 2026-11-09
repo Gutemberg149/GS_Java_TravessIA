@@ -1,0 +1,11 @@
+# Variáveis de ambiente locais (não enviar segredos para o GitHub)
+.env
+
+# Diretórios de build do Maven
+target/
+**/target/
+
+# Arquivos de IDE e Sistema Operacional
+.idea/
+*.iml
+.DS_Store
