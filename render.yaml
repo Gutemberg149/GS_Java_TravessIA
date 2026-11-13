@@ -2,20 +2,26 @@ services:
   - type: web
     name: travessia-eureka
     runtime: docker
+    plan: free
     dockerfilePath: ./eureka-server/Dockerfile
     dockerContext: .
     envVars:
       - key: PORT
         value: 8761
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=75.0
 
   - type: web
     name: travessia-traffic
     runtime: docker
+    plan: free
     dockerfilePath: ./traffic-service/Dockerfile
     dockerContext: .
     envVars:
       - key: PORT
         value: 8081
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=75.0
       - key: ORACLE_URL
         value: jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
       - key: ORACLE_USER
@@ -32,11 +38,14 @@ services:
   - type: web
     name: travessia-gateway
     runtime: docker
+    plan: free
     dockerfilePath: ./gateway-service/Dockerfile
     dockerContext: .
     envVars:
       - key: PORT
         value: 8080
+      - key: JAVA_TOOL_OPTIONS
+        value: -XX:MaxRAMPercentage=75.0
       - key: JWT_SECRET
         value: TravessIASecretKeyForHS256AlgorithmMinimum256BitsRequired2026Fiap
       - key: JWT_EXPIRATION_MS
