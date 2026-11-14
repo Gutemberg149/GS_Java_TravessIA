@@ -353,3 +353,16 @@ Todas as requisições devem ser enviadas para o **Gateway** (`http://localhost:
 
 ---
 
+## 🎥 Vídeo da Solução
+https://vimeo.com/1246888541?share=copy&fl=sv&fe=ci
+
+
+## 👥 Equipe de Desenvolvimento
+
+- 👤 **Gutemberg RM - 562267**
+- 👤 **Erik Naoki RM - 565771**
+- 👤 **Juliana RM - 561171**
+- 👤 **Gustavo RM - 561650**
+- 👤 **João RM - 564361**
+
+
