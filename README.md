@@ -354,7 +354,7 @@ Todas as requisições devem ser enviadas para o **Gateway** (`http://localhost:
 ---
 
 ## 🎥 Vídeo da Solução
-https://vimeo.com/1246888541?share=copy&fl=sv&fe=ci
+https://vimeo.com/reviews/7c75f35b-e718-4169-b27a-d1c3e6eda5eb/videos/1248310454
 
 
 ## 👥 Equipe de Desenvolvimento
